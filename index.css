@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #386F8F;
+    color: #fff;
+    padding: 0; /* Hilangkan padding tambahan */
+}
+
+/* Navbar Flexbox Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+}
+
+/* Logo di Pojok Kiri */
+.navbar-logo {
+    margin-right: auto;
+}
+
+.navbar-logo .logo {
+    width: 50px;
+    height: auto;
+    margin-left: 0; /* Pastikan tidak ada margin kiri */
+}
+
+/* Navbar Menu di Tengah */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+    flex: 1;
+    justify-content: center; /* Menu di tengah */
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.navbar-menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Tombol Login dan Daftar di Pojok Kanan */
+.navbar-auth {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto; /* Dorong ke pojok kanan */
+}
+
+.navbar-auth .btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    background-color: #007bff;
+    margin-left: 1em;
+}
+
+.navbar-auth .btn-secondary {
+    background-color: #28a745;
+}
+
+.navbar-auth .btn:hover {
+    opacity: 0.8;
+}
+
+
+/* Banner Styling */
+.banner {
+    background-image: url('./lingkungan\ bersih.jpg'); /* Ganti 'banner.jpg' dengan gambar banner yang sesuai */
+    background-size: cover;
+    background-position: center;
+    padding: 5em 1em;
+    color: #fff;
+    text-align: center;
+}
+
+.banner-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.btn-primary:hover {
+    background-color: #e64a19;
+}
+/* Items Section */
+.items-section {
+    padding: 2em 1em;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.items-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+.items-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    overflow-x: auto; /* Membuat tampilan bisa di-scroll secara horizontal */
+    padding: 1em 0;
+}
+
+.item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    min-width: 200px; /* Pastikan lebar minimum untuk item */
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+}
+
+.item h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+}
+
+.item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Cara Penukaran Sampah Jadi Poin Section */
+.how-to-section {
+    padding: 2em 1em;
+    background-color: #f4f9f4;
+    text-align: center;
+}
+
+.how-to-section h2 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    color: #2d572c;
+    font-weight: 600;
+    position: relative;
+}
+
+.how-to-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #4CAF50;
+    margin: 0.5em auto 0;
+    border-radius: 2px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.step {
+    background: linear-gradient(135deg, #e0f7e0, #ffffff);
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.step h3 {
+    font-size: 1.4em;
+    margin-bottom: 0.8em;
+    color: #4CAF50;
+    font-weight: 500;
+    position: relative;
+}
+
+.step h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 3px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+}
+
+.step p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Presentasi Sampah yang Daur Ulang Section */
+.recycling-statistics {
+    padding: 3em 1em;
+    background: linear-gradient(45deg, #f4f9f4, #d0e9d3);
+    text-align: center;
+    margin-top: 3em;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recycling-statistics h2 {
+    font-size: 2.2em;
+    color: #2d572c;
+    margin-bottom: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.recycling-chart {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0 1em;
+    transition: transform 0.3s ease;
+}
+
+.chart-item:hover {
+    transform: scale(1.1);
+}
+
+.chart-item span {
+    position: absolute;
+    font-size: 1em;
+    font-weight: 700;
+}

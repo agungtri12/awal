@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Awal</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Logo di Pojok Kiri -->
+            <div class="navbar-logo">
+                <img src="logo.png" alt="Logo" class="logo">
+            </div>
+            
+            <!-- Menu Navigasi di Tengah -->
+            <ul class="navbar-menu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#carakerja">Cara Kerja</a></li>
+                <li><a href="#statistik">Statistik</a></li>
+                <li><a href="#ulasan">Ulasan</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            
+            <!-- Tombol Login dan Daftar di Pojok Kanan -->
+            <div class="navbar-auth">
+                <a href="#login" class="btn">Login</a>
+                <a href="#daftar" class="btn btn-secondary">Daftar</a>
+            </div>
+        </nav>
+    </header>
+    
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Tukar Sampahmu, Dapatkan Poin!</h1>
+            <p>Jadikan sampah lebih bernilai. Tukarkan sampahmu dan dapatkan poin yang bisa ditukar dengan berbagai hadiah menarik!</p>
+            <a href="#daftar" class="btn btn-primary">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Barang yang Bisa Ditukarkan Menjadi Poin Section -->
+<section class="items-section">
+    <h2>Barang yang Bisa Ditukarkan Menjadi Poin</h2>
+    <div class="items-grid">
+        <!-- Item 1 -->
+        <div class="item">
+            <img src="item1.jpg" alt="Item 1" class="item-image">
+            <h3>Botol Plastik</h3>
+            <p>10 Poin per Botol</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="item">
+            <img src="item2.jpg" alt="Item 2" class="item-image">
+            <h3>Kardus</h3>
+            <p>15 Poin per Kardus</p>
+        </div>
+        <!-- Item 3 -->
+        <div class="item">
+            <img src="item3.jpg" alt="Item 3" class="item-image">
+            <h3>Kertas</h3>
+            <p>5 Poin per Lembar</p>
+        </div>
+        <!-- Tambahkan lebih banyak item sesuai kebutuhan -->
+    </div>
+</section>
+
+<!-- Cara Penukaran Sampah Jadi Poin Section -->
+<section class="how-to-section" id="carkerja">
+    <h2>Cara Penukaran Sampah Jadi Poin</h2>
+    <div class="steps">
+        <!-- Step 1 -->
+        <div class="step">
+            <h3>1. Kumpulkan Sampah</h3>
+            <p>Pilah sampah yang bisa didaur ulang, seperti botol plastik, kardus, dan kertas.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="step">
+            <h3>2. Bawa ke Tempat Pengumpulan</h3>
+            <p>Datangi tempat pengumpulan atau layanan yang bekerja sama dengan kami.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="step">
+            <h3>3. Tukarkan Sampah</h3>
+            <p>Serahkan sampah untuk ditimbang dan dapatkan poin sesuai jenis dan jumlahnya.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="step">
+            <h3>4. Tukarkan Poin dengan Hadiah</h3>
+            <p>Gunakan poin yang telah dikumpulkan untuk menukarkan berbagai hadiah menarik!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Presentasi Sampah yang Daur Ulang Section -->
+<section class="recycling-statistics">
+    <h2>Presentasi Sampah yang Daur Ulang dan Dikelola</h2>
+    <div class="recycling-chart">
+        <div class="chart-item" style="width: 70%; background-color: #4CAF50;">
+            <span>Botol Plastik: 70%</span>
+        </div>
+        <div class="chart-item" style="width: 15%; background-color: #FFD700;">
+            <span>Kardus: 15%</span>
+        </div>
+        <div class="chart-item" style="width: 10%; background-color: #007bff;">
+            <span>Kertas: 10%</span>
+        </div>
+        <div class="chart-item" style="width: 5%; background-color: #f44336;">
+            <span>Lainnya: 5%</span>
+        </div>
+    </div>
+</section>
+</body>
+</html>
