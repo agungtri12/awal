@@ -2,96 +2,205 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
-
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+/* General Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa; /* Soft background color */
 }
 
+/* Header Styling */
 header {
-    background-color: #386F8F;
+    background-color: #386F8F; /* Dark blue background for the header */
     color: #fff;
-    padding: 0; /* Hilangkan padding tambahan */
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Navbar Flexbox Styling */
+/* Navbar Styling */
 .navbar {
     display: flex;
     align-items: center;
-    padding: 0 1em;
+    justify-content: space-between;
+    padding: 1em 2em; /* Space between elements */
+    background-color: #386F8F;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out; /* Smooth background color change on scroll */
 }
 
-/* Logo di Pojok Kiri */
+/* Hover Effect on Navbar */
+.navbar:hover {
+    background-color: #4a90a4; /* Lighter blue when hovered */
+}
+
+/* Logo and Name */
 .navbar-logo {
-    margin-right: auto;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-logo .logo {
-    width: 50px;
+    width: 45px;
     height: auto;
-    margin-left: 0; /* Pastikan tidak ada margin kiri */
+    transition: transform 0.3s ease;
 }
 
-/* Navbar Menu di Tengah */
+/* Logo Name */
+.navbar-logo .logo-name {
+    color: #fff;
+    font-size: 1.6em;
+    margin-left: 1em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo .logo-name:hover {
+    color: #FFD700; /* Gold color when hovered */
+}
+
+/* Navbar Menu Styling */
 .navbar-menu {
     list-style: none;
     display: flex;
     gap: 2em;
-    flex: 1;
-    justify-content: center; /* Menu di tengah */
+    justify-content: center;
+    margin-left: auto;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for menu */
+}
+
+/* Menu Item Styling */
+.navbar-menu li {
+    position: relative;
 }
 
 .navbar-menu li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-menu li a:hover {
-    text-decoration: underline;
+    color: #FFD700; /* Gold hover effect */
+    transform: scale(1.1); /* Slightly enlarge text on hover */
 }
 
-/* Tombol Login dan Daftar di Pojok Kanan */
-.navbar-auth {
-    display: flex;
-    justify-content: flex-end;
-    margin-left: auto; /* Dorong ke pojok kanan */
+/* Hover Line Effect */
+.navbar-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
 }
 
-.navbar-auth .btn {
+/* Expand line on hover */
+.navbar-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Button Styling */
+.navbar-menu .btn {
     color: #fff;
     text-decoration: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
+    padding: 0.6em 1.2em;
+    border-radius: 30px;
     background-color: #007bff;
-    margin-left: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.navbar-auth .btn-secondary {
+.navbar-menu .btn-secondary {
     background-color: #28a745;
 }
 
-.navbar-auth .btn:hover {
-    opacity: 0.8;
+.navbar-menu .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.navbar-menu .btn-secondary:hover {
+    background-color: #218838;
+}
+
+/* Menu Toggle (Hamburger) */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.navbar-toggle .bar {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Toggle Animation */
+.navbar-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
 }
 
 
-/* Banner Styling */
+/* Banner Styling with Parallax Effect */
 .banner {
-    background-image: url('./lingkungan\ bersih.jpg'); /* Ganti 'banner.jpg' dengan gambar banner yang sesuai */
+    background-image: url('./lingkungan\ bersih.jpg'); /* Replace with the correct image path */
     background-size: cover;
     background-position: center;
-    padding: 5em 1em;
+    padding: 0; /* Remove padding */
     color: #fff;
     text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* To position elements inside */
+    overflow: hidden; /* Prevent scrollbars from appearing */
+    background-attachment: fixed; /* This enables the parallax effect */
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure background covers the section */
+    will-change: transform; /* Optimization for performance */
 }
 
+/* Banner Content Styling */
 .banner-content {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
     padding: 2em;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 .banner h1 {
@@ -117,6 +226,8 @@ header {
 .btn-primary:hover {
     background-color: #e64a19;
 }
+
+
 /* Items Section */
 .items-section {
     padding: 2em 1em;
@@ -129,14 +240,16 @@ header {
     margin-bottom: 1em;
 }
 
+/* Grid for items */
 .items-grid {
     display: flex;
     justify-content: center;
     gap: 2em;
-    overflow-x: auto; /* Membuat tampilan bisa di-scroll secara horizontal */
+    overflow-x: auto; /* Makes the grid horizontally scrollable */
     padding: 1em 0;
 }
 
+/* Individual Item Styling */
 .item {
     background-color: #fff;
     border-radius: 8px;
@@ -144,9 +257,10 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 200px;
-    min-width: 200px; /* Pastikan lebar minimum untuk item */
+    min-width: 200px; /* Ensures a minimum width for each item */
 }
 
+/* Image Styling for Items */
 .item img {
     width: 100%;
     height: auto;
@@ -154,21 +268,29 @@ header {
     margin-bottom: 0.5em;
 }
 
+/* Title Styling */
 .item h3 {
     font-size: 1.2em;
     margin-bottom: 0.3em;
 }
 
+/* Description Styling */
 .item p {
     font-size: 1em;
     color: #555;
 }
 
+
 /* Cara Penukaran Sampah Jadi Poin Section */
 .how-to-section {
     padding: 2em 1em;
-    background-color: #f4f9f4;
+    background-image: url('path-to-your-image.jpg'); /* Replace with the image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Enables parallax effect */
     text-align: center;
+    color: #fff; /* Adjust the text color for better contrast */
+    position: relative;
 }
 
 .how-to-section h2 {
@@ -250,6 +372,8 @@ header {
     margin-top: 3em;
     transition: transform 0.3s ease;
     font-family: 'Poppins', sans-serif; /* Elegant and modern font choice */
+    position: relative;
+    overflow: hidden;
 }
 
 .about-us:hover {
@@ -263,6 +387,7 @@ header {
     gap: 2em;
     flex-wrap: wrap;
     padding: 1em;
+    z-index: 10; /* Ensure content stays above background */
 }
 
 .about-image img {
@@ -306,9 +431,234 @@ header {
     letter-spacing: 0.5px;
 }
 
+/* Add parallax effect to the background */
+.about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path-to-your-image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1; /* Ensure background stays behind content */
+    filter: blur(5px); /* Optional: Add blur for a soft parallax effect */
+    transition: background-position 0.5s ease-in-out;
+}
+
+/* Features Section */
+.features {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.features h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 10px;
+}
+
+.feature-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #34495e;
+    line-height: 1.5;
+}
 .about-text p::selection {
     background: #a5d6a7;
     color: #fff;
+}
+/* WhatsApp Icon Styling */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 10px; /* Position from the bottom */
+    right: 10px;  /* Position from the right */
+    background-color: #25d366; /* WhatsApp Green */
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    z-index: 1000; /* Make sure it's on top of other content */
+    animation: bounceAndColorChange 3s infinite ease-in-out; /* Repeat every 3s */
+}
+
+/* Icon size and color */
+.whatsapp-icon .iconify {
+    font-size: 1rem; /* Icon size */
+    color: white; /* Icon color */
+}
+
+/* Hover effects */
+.whatsapp-icon:hover {
+    transform: scale(1.1) rotate(10deg); /* Zoom in and rotate on hover */
+    filter: brightness(1.2); /* Brightness effect */
+}
+
+/* Bounce and color change animation */
+@keyframes bounceAndColorChange {
+    0% {
+        transform: translateY(0);
+        background-color: #25d366; /* Initial WhatsApp green */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up */
+        background-color: #128c7e; /* Darker green */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+        background-color: #25d366; /* Return to original color */
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50; /* Darker, modern background */
+    color: white;
+    padding: 4em 0; /* Padding for spacious look */
+    font-family: 'Montserrat', sans-serif; /* Modern sans-serif font */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Footer content wrapper */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em; /* Better spacing */
+}
+
+/* Logo Styling */
+.footer-logo img {
+    width: 150px; /* Adjust size for logo */
+    margin-bottom: 1em;
+}
+
+/* Footer navigation links */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-bottom: 2em;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #1abc9c;
+    transform: translateY(-3px); /* Hover effect */
+}
+
+/* Social Media Icons Styling */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 1.5em;
+}
+
+.footer-social a {
+    color: #fff;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    filter: brightness(1.2); /* Slight brightness increase */
+}
+
+.footer-social .iconify {
+    font-size: 2.5rem; /* Adjust icon size */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.footer-social a:hover .iconify {
+    transform: rotate(360deg); /* Icon spin effect on hover */
+}
+
+/* Footer Buttons Styling */
+.footer-buttons {
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.footer-buttons a {
+    padding: 1em 2.5em;
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-buttons a:hover {
+    background-color: #2ecc71;
+    transform: translateY(-3px); /* Hover effect for button */
+}
+
+.footer-buttons .btn-login {
+    background-color: #2980b9; /* Blue for login */
+}
+
+.footer-buttons .btn-login:hover {
+    background-color: #3498db;
+}
+
+.footer-buttons .btn-register {
+    background-color: #f39c12; /* Yellow for register */
+}
+
+.footer-buttons .btn-register:hover {
+    background-color: #f1c40f;
 }
 
 @media (max-width: 768px) {
@@ -317,5 +667,90 @@ header {
     }
     .about-text p {
         font-size: 1.1em;
+    }
+    .features {
+        padding: 30px 15px;
+    }
+
+    .features h2 {
+        font-size: 24px;
+    }
+
+    .feature-card h3 {
+        font-size: 18px;
+    }
+
+    .feature-card p {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Sembunyikan menu navigasi pada layar kecil */
+    .navbar-menu {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #386F8F;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    /* Menampilkan menu toggle */
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Menampilkan tombol Login dan Daftar hanya dalam menu toggle */
+    .navbar-auth {
+        display: flex;
+    }
+
+    /* Menampilkan menu navigasi dan tombol Login & Daftar ketika toggle di klik */
+    .navbar-menu.active {
+        display: block;
+    }
+
+    .navbar-menu li a {
+        padding: 1em;
+        display: block;
+        background-color: #007bff;
+        border-radius: 5px;
+    }
+
+    .navbar-menu li a.btn-secondary {
+        background-color: #28a745;
+    }
+
+    .navbar-menu li a:hover {
+        opacity: 0.8;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+        gap: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    .footer-social {
+        gap: 1em;
+    }
+
+    .footer-buttons {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .footer-buttons a {
+        padding: 1em 2em;
+        font-size: 1.1em;
+    }
+
+    .footer-social .iconify {
+        font-size: 2rem;
     }
 }

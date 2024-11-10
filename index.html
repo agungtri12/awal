@@ -5,43 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Awal</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <!-- Logo di Pojok Kiri -->
+            <!-- Logo dan Nama di Pojok Kiri -->
             <div class="navbar-logo">
                 <img src="logo.png" alt="Logo" class="logo">
+                <span class="logo-name">GoForest</span>
             </div>
-            
+
             <!-- Menu Navigasi di Tengah -->
             <ul class="navbar-menu">
                 <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentagkami">Tentang Kami</a></li>
                 <li><a href="#carakerja">Cara Kerja</a></li>
-                <li><a href="#statistik">Statistik</a></li>
-                <li><a href="#ulasan">Ulasan</a></li>
                 <li><a href="#kontak">Kontak</a></li>
+                
+                <!-- Tombol Login dan Daftar dalam Menu -->
+                <li><a href="/login.html" class="btn">Login</a></li>
+                <li><a href="/daftar.html" class="btn btn-secondary">Daftar</a></li>
             </ul>
-            
-            <!-- Tombol Login dan Daftar di Pojok Kanan -->
-            <div class="navbar-auth">
-                <a href="#login" class="btn">Login</a>
-                <a href="#daftar" class="btn btn-secondary">Daftar</a>
+
+            <!-- Menu Toggle untuk Responsif -->
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
-    
-
     <!-- Banner Section -->
-    <section class="banner">
+    <section class="banner" id="beranda">
         <div class="banner-content">
             <h1>Tukar Sampahmu, Dapatkan Poin!</h1>
             <p>Jadikan sampah lebih bernilai. Tukarkan sampahmu dan dapatkan poin yang bisa ditukar dengan berbagai hadiah menarik!</p>
-            <a href="#daftar" class="btn btn-primary">Daftar Sekarang</a>
+            <a href="/daftar.html" class="btn btn-primary">Daftar Sekarang</a>
         </div>
     </section>
 <!-- About Us Section -->
-<section class="about-us">
+<section class="about-us" id="tentagkami">
     <div class="content">
         <div class="about-image">
             <img src="sampah.jpg" alt="Sampah yang Daur Ulang">
@@ -61,29 +67,56 @@
 
 
     <!-- Barang yang Bisa Ditukarkan Menjadi Poin Section -->
-<section class="items-section">
+<section class="items-section" id="barang">
     <h2>Barang yang Bisa Ditukarkan Menjadi Poin</h2>
     <div class="items-grid">
         <!-- Item 1 -->
         <div class="item">
-            <img src="item1.jpg" alt="Item 1" class="item-image">
+            <img src="/botol.png" alt="Item 1" class="item-image">
             <h3>Botol Plastik</h3>
             <p>10 Poin per Botol</p>
         </div>
         <!-- Item 2 -->
         <div class="item">
-            <img src="item2.jpg" alt="Item 2" class="item-image">
+            <img src="/kardus.jpg" alt="Item 2" class="item-image">
             <h3>Kardus</h3>
             <p>15 Poin per Kardus</p>
         </div>
         <!-- Item 3 -->
         <div class="item">
-            <img src="item3.jpg" alt="Item 3" class="item-image">
+            <img src="/kertas.jpg" alt="Item 3" class="item-image">
             <h3>Kertas</h3>
             <p>5 Poin per Lembar</p>
         </div>
         <!-- Tambahkan lebih banyak item sesuai kebutuhan -->
     </div>
+</section>
+<!-- Features Section -->
+<div class="features" id="carakerja">
+    <h2>Fitur Go Forest</h2>
+    <div class="feature-cards">
+        <div class="feature-card">
+            <h3>Pengumpulan Sampah</h3>
+            <p>Kumpulkan sampah, dapatkan poin, dan tukarkan dengan hadiah menarik.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Hadiah Ramah Lingkungan</h3>
+            <p>Tukarkan poin dengan barang ramah lingkungan dan diskon produk hijau.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Inisiatif Hijau</h3>
+            <p>Dukung program penghijauan dan pelestarian alam.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Pemantauan Sampah IoT</h3>
+            <p>Gunakan teknologi IoT untuk memantau sampah di rumah Anda. Terima notifikasi saat sampah penuh dan petugas akan segera mengambilnya.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Komunitas Hijau</h3>
+            <p>Bergabung dengan komunitas Go Forest dan berbagi inspirasi untuk bumi yang lebih baik.</p>
+        </div>
+    </div>
+</div>
 </section>
 
 <!-- Cara Penukaran Sampah Jadi Poin Section -->
@@ -112,7 +145,56 @@
         </div>
     </div>
 </section>
+<!-- WhatsApp Icon at the top right -->
+<a href="https://wa.me/phone_number" target="_blank" class="whatsapp-icon" aria-label="WhatsApp">
+    <span class="iconify" data-icon="akar-icons:whatsapp-fill" data-inline="false"></span> <!-- WhatsApp Icon -->
+</a>
+
+<!-- Footer Section -->
+<footer id="kontak">
+    <div class="footer-content">
+        <!-- Logo on the left -->
+        <div class="footer-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <!-- Footer navigation links -->
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentagkami">Tentang Kami</a></li>
+                <li><a href="#carakerja">Cara Kerja</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+
+        <!-- Social Media Icons -->
+        <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                <span class="iconify" data-icon="ant-design:instagram-outlined" data-inline="false"></span>
+            </a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                <span class="iconify" data-icon="ant-design:youtube-outlined" data-inline="false"></span>
+            </a>
+            <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+                <span class="iconify" data-icon="akar-icons:tiktok-fill" data-inline="false"></span>
+            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <span class="iconify" data-icon="ant-design:facebook-outlined" data-inline="false"></span>
+            </a>
+        </div>
+
+        <!-- Login and Register Buttons -->
+        <div class="footer-buttons">
+            <a href="/login.html" target="_blank" class="btn-login">Login</a>
+            <a href="daftar.html" target="_blank" class="btn-register">Daftar</a>
+        </div>
+    </div>
+</footer>
 
 
+
+
+<script src="index.js"></script>
 </body>
 </html>

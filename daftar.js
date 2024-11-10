@@ -9,4 +9,7 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
-
+document.addEventListener("DOMContentLoaded", function() {
+    // Initially set the container to show the sign-up form
+    document.querySelector('.container').classList.add('active');
+});
